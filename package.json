@@ -10,7 +10,7 @@
     "prod": "npm run build && npm run start",
     "clean": "rm -rf node_modules coverage dist .nyc_output",
     "lint": "tslint -t stylish --project \"tsconfig.json\"",
-    "seed": "node ./dist/seed.js",
+    "seed": "tsc && node ./dist/seed.js && rm -rf dist",
     "test": "jest --watchAll --verbose"
   },
   "repository": {
@@ -37,7 +37,6 @@
     "cors": "^2.8.5",
     "dotenv": "^8.0.0",
     "express": "^4.17.1",
-    "express-async-error": "0.0.2",
     "express-async-errors": "^3.1.1",
     "fawn": "^2.1.5",
     "http-status": "^1.3.2",
